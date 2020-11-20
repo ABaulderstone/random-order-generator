@@ -29,8 +29,9 @@ while true
             copied_group.delete_at(random_index)
         end 
     when 3
-        puts "You pressed 3"
-        break
+        puts "Are you sure, type 'yes' to quit"
+        quit_choice = gets.chomp
+        break if quit_choice.downcase == 'yes'
     else 
         puts "Invalid input"
     end
