@@ -5,7 +5,7 @@
 # RANDOM ORDER IMPLEMENTATION: Copy array, select random name - get random index (number between 0 and array length -1 )
 #   get name at random index, delete name from array, keep going until array length == 0
 
-group = ["Cat", "Alex", "Daniel", "Andrew", "Jario", "Varsha"]
+group = ["cat", "Alex", "Daniel", "Andrew", "jario", "Varsha"]
 
 
 while true
@@ -27,7 +27,7 @@ while true
             copied_group = group.clone
             while copied_group.length > 0 
                 random_index = rand((copied_group.length))
-                puts copied_group[random_index]
+                puts copied_group[random_index].capitalize
                 copied_group.delete_at(random_index)
             end
             puts "Press 1 go back"
