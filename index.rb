@@ -9,6 +9,7 @@ group = []
 
 
 while true
+    puts "There are #{group.length} members in the group"
     puts "Press 1) to add a member to the group." 
     puts "Press 2) to display a random group."
     puts "Press 3) to quit"
@@ -16,7 +17,10 @@ while true
     
     case menu_input
     when 1 
-        puts "You pressed 1"
+        puts "Enter name to add:"
+        name = gets.chomp
+        group.push(name)
+        # group << name
     when 2 
         puts "You pressed 2"
     when 3
