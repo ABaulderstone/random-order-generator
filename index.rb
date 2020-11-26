@@ -11,17 +11,9 @@ group = []
 
 while true
     output_member_message(group.length)
-    puts "Press 1) to add a member to the group." 
-    puts "Press 2) to display a random group."
-    puts "Press 3) to quit"
-    menu_input = gets.chomp.to_i
-    
-    case menu_input
+    case menu_input_select
     when 1 
-        puts "Enter name to add:"
-        name = gets.chomp
-        group.push(name)
-        # group << name
+        add_name_to_group(group)
     when 2
         random_group_running = true
         while random_group_running 
