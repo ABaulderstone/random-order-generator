@@ -5,11 +5,11 @@
 # RANDOM ORDER IMPLEMENTATION: Copy array, select random name - get random index (number between 0 and array length -1 )
 #   get name at random index, delete name from array, keep going until array length == 0
 
-group = ["cat", "Alex", "Daniel", "Andrew", "jario", "Varsha"]
+group = []
 
 
 while true
-    puts "There are #{group.length} members in the group"
+    puts "There are #{group.length} #{group.length == 1 ? 'member': 'members'} in the group"
     puts "Press 1) to add a member to the group." 
     puts "Press 2) to display a random group."
     puts "Press 3) to quit"
