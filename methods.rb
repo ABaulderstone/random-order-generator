@@ -21,3 +21,18 @@ def add_name_to_group(group)
     name = gets.chomp
     group.push(name)
 end 
+
+def display_random_order(arr)
+    arr.shuffle.each do |item| 
+        puts item
+    end 
+end
+
+def quit_program
+    puts "Are you sure you want to quit?"
+    answer = gets.chomp
+    if answer.downcase == 'yes'
+        puts "goodbye"
+        exit
+    end
+end 
