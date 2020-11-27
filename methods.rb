@@ -1,4 +1,5 @@
 require 'espeak'
+require 'rainbow'
 
 def output_member_message(length) 
     if length == 1 
@@ -24,8 +25,9 @@ def add_name_to_group(group)
 end 
 
 def display_random_order(arr)
-    arr.shuffle.each do |item| 
-        pause(1,item)
+    arr.shuffle.each_with_index do |item, index|
+        colored_item = index % 2 == 0 ? Rainbow(item).red : Rainbow(item).blue
+        pause(1,colored_item)
         ESpeak::Speech.new(item).speak
     end 
 end

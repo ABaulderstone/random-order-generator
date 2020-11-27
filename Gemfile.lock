@@ -2,12 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     espeak-ruby (1.0.4)
+    rainbow (3.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   espeak-ruby
+  rainbow (~> 3.0)
 
 BUNDLED WITH
    2.1.4
