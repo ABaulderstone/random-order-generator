@@ -1,3 +1,5 @@
+require 'espeak'
+
 def output_member_message(length) 
     if length == 1 
         puts "There is #{length} member in the group"
@@ -24,6 +26,7 @@ end
 def display_random_order(arr)
     arr.shuffle.each do |item| 
         pause(1,item)
+        ESpeak::Speech.new(item).speak
     end 
 end
 

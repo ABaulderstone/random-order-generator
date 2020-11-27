@@ -1,5 +1,11 @@
 # Student Randomizer:
+## Install 
+```
+ bundle install 
+``` 
 
+## Dependencies
+ - espeak-ruby gem requires local install of espeak. Check [the docs](https://github.com/dejan/espeak-ruby)
 ## Requirement
 - Needs to use loops where possibly (no iterators)
 - All variables in snake case

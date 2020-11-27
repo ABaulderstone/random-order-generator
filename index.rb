@@ -6,9 +6,11 @@
 #   get name at random index, delete name from array, keep going until array length == 0
 
 require_relative('methods')
+require 'espeak'
 group = ["Alex", "Daniel", "Cat", "Andrew", "Jario", "Varsha"]
 
 
+ESpeak::Speech.new("Welcome to the random group selector").speak
 while true
     output_member_message(group.length)
     case menu_input_select
