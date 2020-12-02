@@ -49,3 +49,7 @@ def pause(seconds, message)
     end 
     puts "\n#{message}"
 end 
+
+def parse_array(path)
+    File.readlines(path).map {|name| name.gsub(/\n/, '')}
+end 

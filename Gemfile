@@ -9,3 +9,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "espeak-ruby", require: "espeak"
 
 gem "rainbow", "~> 3.0"
+
+gem "rspec", "~> 3.10"
