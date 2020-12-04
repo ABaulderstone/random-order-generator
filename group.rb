@@ -12,6 +12,10 @@ class Group
     
     def to_s 
         return "Name: #{@name} Members: #{@names_array}"
+    end
+    
+    def path_to_array
+        return File.readlines(@file_path).map {|name| name.strip}
     end 
 
     
@@ -19,3 +23,5 @@ class Group
 
 end
 
+group = Group.new("Test group", "./groups/test-group.txt")
+pp group.path_to_array

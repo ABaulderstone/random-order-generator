@@ -2,7 +2,8 @@ require_relative ('../group')
 
 describe 'group' do 
     before(:each) do 
-        @group = Group.new("Test group", "./groups/test-group.txt") 
+        @group = Group.new("Test group", "./groups/test-group.txt")
+        @names = File.readlines("./groups/test-group.txt").map {|name| name.strip} 
     end 
     
     it 'should be an instance of a Group' do 
@@ -42,6 +43,23 @@ describe 'group' do
         end
         it 'should return the group name' do 
             expect(@group.to_s).to include("Test group")
+        end 
+    end
+    
+    describe '.path_to_array' do 
+        it 'should be defined' do 
+            expect(defined? @group.path_to_array).to eq("method")
+        end
+
+        it 'should return an Array' do 
+            expect(@group.path_to_array).to be_an_instance_of(Array)
+        end
+        
+        it 'should remove newline from names' do 
+            expect(@group.path_to_array[0]).not_to include("\n")
+        end
+        it "should populate with names from the file path" do 
+            expect(@group.path_to_array).to include(@names[0])
         end 
     end 
 
