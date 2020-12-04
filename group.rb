@@ -8,9 +8,14 @@ class Group
 
     def add_name(name)
        return @names_array.push(name)
+    end
+    
+    def to_s 
+        return "Name: #{@name} Members: #{@names_array}"
     end 
 
     
     
 
 end
+

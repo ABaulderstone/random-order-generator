@@ -34,6 +34,15 @@ describe 'group' do
             length = @group.names_array.length
             expect(@group.add_name("Alice").length).to be length + 1 
         end 
+    end
+    
+    describe '.to_s' do 
+        it 'should be defined' do 
+            expect(defined? @group.to_s).to eq("method")
+        end
+        it 'should return the group name' do 
+            expect(@group.to_s).to include("Test group")
+        end 
     end 
 
 
