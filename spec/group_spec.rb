@@ -60,6 +60,27 @@ describe 'group' do
         end
         it "should populate with names from the file path" do 
             expect(@group.path_to_array).to include(@names[0])
+        end
+
+        describe '.randomise_order' do 
+            it 'should be defined' do 
+                expect(defined? @group.randomise_order).to eq("method")
+            end
+            it 'should return an Array' do 
+                expect(@group.randomise_order).to be_an_instance_of(Array)
+            end
+            it 'should contain the names in @names_array' do 
+                expect(@group.randomise_order).to include(*@group.names_array)
+            end 
+        end 
+        
+        describe '.display_random_order' do 
+            it 'should be defined' do 
+                expect(defined? @group.display_random_order).to eq("method")
+            end
+            it 'should output a name from @names_array' do 
+                expect{@group.display_random_order}.to output(/#{Regexp.quote(@group.names_array[0])}/).to_stdout
+            end 
         end 
     end 
 
