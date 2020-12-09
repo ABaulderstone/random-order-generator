@@ -49,3 +49,7 @@ def pause(seconds, message)
     end 
     puts "\n#{message}"
 end 
+
+def handle_args 
+
+end 
