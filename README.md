@@ -2,7 +2,12 @@
 ## Install 
 ```
  bundle install 
-``` 
+```
+
+## Running the App 
+Bash script `runner.sh` included, you may need to change permissions to use the script
+or `ruby index.rb` to launch application 
+
 
 ## Group useage
 The Group class requires a file to read, located in the groups directory. It comes with test-group as an example. See `.file_to_path` for implementation
