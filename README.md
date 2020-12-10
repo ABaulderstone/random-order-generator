@@ -4,6 +4,9 @@
  bundle install 
 ``` 
 
+## Group useage
+The Group class requires a file to read, located in the groups directory. It comes with test-group as an example. See `.file_to_path` for implementation
+
 ## Dependencies
  - espeak-ruby gem requires local install of espeak. Check [the docs](https://github.com/dejan/espeak-ruby)
 ## Requirement
