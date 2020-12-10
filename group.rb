@@ -16,7 +16,16 @@ class Group
     end
     
     def path_to_array
-        return File.readlines(@file_path).map {|name| name.strip}
+        begin
+            array = File.readlines(@file_path).map {|name| name.strip}
+        rescue
+            puts "Invalid path. Creating file"
+            File.open(@file_path, "w") do |file| 
+                file.write("")
+            end 
+            array = []
+        end
+        return array 
     end 
 
     def randomise_order
