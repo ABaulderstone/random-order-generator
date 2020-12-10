@@ -10,6 +10,25 @@ require 'espeak'
 require_relative 'group'
 test_group = Group.new("Test Group", "./groups/test-group.txt")
 
+if ARGV.length > 0
+    flag, *rest = ARGV
+    ARGV.clear
+    case flag 
+    when '-help'
+        puts "Read the readme"
+        exit
+    when '-path'
+        puts rest[0]
+        exit
+    when '-info'
+        puts "This program is using Ruby version: #{RUBY_VERSION}"
+        exit
+    else
+        puts "Invalid argument"
+        exit
+    end 
+end 
+
 
 while true
     output_member_message(test_group.names_array.length)
