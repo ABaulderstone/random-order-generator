@@ -8,7 +8,8 @@
 require_relative 'methods'
 require 'espeak'
 require_relative 'group'
-test_group = Group.new("Test Group", "./groups/test-group.txt")
+
+#Handle command line arguments
 
 if ARGV.length > 0
     flag, *rest = ARGV
@@ -18,8 +19,7 @@ if ARGV.length > 0
         puts "Read the readme"
         exit
     when '-path'
-        puts rest[0]
-        exit
+        group = Group.new("Default", rest[0])
     when '-info'
         puts "This program is using Ruby version: #{RUBY_VERSION}"
         exit
@@ -29,23 +29,27 @@ if ARGV.length > 0
     end 
 end 
 
+#Assigning the group
 
+group ||= Group.new("Test Group", "./groups/test-group.txt")
+
+#main program loop 
 while true
-    output_member_message(test_group.names_array.length)
+    output_member_message(group.names_array.length)
     case menu_input_select
     when 1
         adding = true
         while adding 
             puts "Enter Name to Add:"
             name = gets.chomp 
-            test_group.add_name(name)
+            group.add_name(name)
             puts "#{name} was added to the group, would you like to add another?"
             if gets.chomp.downcase != 'yes'
                 adding = false
             end
         end
     when 2
-        test_group.display_random_order
+        group.display_random_order
     when 3
        quit_program
     else 
