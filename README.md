@@ -6,7 +6,12 @@
 
 ## Running the App 
 Bash script `runner.sh` included, you may need to change permissions to use the script
-or `ruby index.rb` to launch application 
+or `ruby index.rb` to launch application
+### Arguments
+- `-help` - displays help info
+- `-info` - displays program info
+- `-path {path}` - instansiates a group based on the path given
+  
 
 
 ## Group useage
