@@ -55,6 +55,8 @@ while true
         group.display_random_order
     when 3
        quit_program
+    when 4 
+        group.save
     else 
         raise ValidationError
     end

@@ -1,4 +1,24 @@
-class Group
+class GroupModel
+
+    def self.all 
+        contents = Dir.entries('./groups').select {|file| file =~ /^.+\.txt/}
+        contents.map do |file| 
+            words = file.split("-")
+            words[-1].delete_suffix!(".txt")
+            words.map! {|word| word.capitalize}
+            {name: words.join(" "), path: "./groups/#{file}"}
+        end
+    end 
+
+    def self.create(name)
+        path = name.split(" ").map {|word| word.downcase}.join("-") + ".txt"
+        File.open("./groups/#{path}", "w") do |file|
+            file.write("")
+        end 
+        puts "created file"
+        sleep(1)
+    end 
+
     attr_reader :name, :names_array, :file_path
     def initialize(name,file_path)
         @name = name
@@ -9,6 +29,10 @@ class Group
 
     def add_name(name)
        return @names_array.push(name)
+    end
+
+    def remove_name(name)
+        return @names_array.delete(name)
     end
     
     def to_s 
@@ -32,21 +56,12 @@ class Group
         return @names_array.shuffle
     end
 
-    def display_random_order
-        randomise_order.each do |name| 
-            puts name 
-        end 
-    end 
-    
     def save
-        pp @names_array
         File.open(@file_path, "w+") do |file|
             file.puts(@names_array)
         end
     end
-    
-    
 
-end
+end 
 
 
