@@ -36,7 +36,7 @@ class GroupController
             when 2 
                 name = @view.input_name("add")
                 added = @model.add_name(name)
-                puts "added #{added}"
+                puts "added #{name}"
                 sleep(1)
             when 3
                 name = @view.input_name("remove")
